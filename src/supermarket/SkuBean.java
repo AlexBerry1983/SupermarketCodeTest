@@ -72,6 +72,16 @@ public class SkuBean implements Serializable {
 		}
 		return true;
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((price == null) ? 0 : price.hashCode());
+		result = prime * result + ((productCode == null) ? 0 : productCode.hashCode());
+		return result;
+	}
 
 	
 	

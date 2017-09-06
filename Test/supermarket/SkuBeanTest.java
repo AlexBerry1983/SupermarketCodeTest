@@ -106,5 +106,27 @@ public class SkuBeanTest {
 		
 		assertEquals(false, bean1.equals(bean2));
 	}
+	
+	@Test
+	public void hashCodesEqual() {
+		SkuBean bean1 = new SkuBean();
+		SkuBean bean2 = new SkuBean();
+		
+		bean1.setProductCode("Q123");
+		bean2.setProductCode("Q123");
+		
+		assertEquals(bean1.hashCode(), bean2.hashCode());
+	}
+	
+	@Test
+	public void hashCodesUnequal() {
+		SkuBean bean1 = new SkuBean();
+		SkuBean bean2 = new SkuBean();
+		
+		bean1.setProductCode("Q123");
+		bean2.setProductCode("W123");
+		
+		assertNotSame(bean1.hashCode(), bean2.hashCode());
+	}
 
 }
