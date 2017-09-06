@@ -12,5 +12,12 @@ public class SkuBeanTest {
 		bean.setProductCode("H123");
 		assertEquals("H123", bean.getProductCode());
 	}
+	
+	@Test
+	public void getDescriptionTest() {
+		SkuBean bean = new SkuBean();
+		bean.setDescription("Chocolate cake");
+		assertEquals("Chocolate cake", bean.getDescription());
+	}
 
 }
