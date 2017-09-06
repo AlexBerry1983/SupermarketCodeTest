@@ -37,6 +37,43 @@ public class SkuBean implements Serializable {
 		this.price = price;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof SkuBean)) {
+			return false;
+		}
+		SkuBean other = (SkuBean) obj;
+		if (description == null) {
+			if (other.description != null) {
+				return false;
+			}
+		} else if (!description.equals(other.description)) {
+			return false;
+		}
+		if (price == null) {
+			if (other.price != null) {
+				return false;
+			}
+		} else if (!price.equals(other.price)) {
+			return false;
+		}
+		if (productCode == null) {
+			if (other.productCode != null) {
+				return false;
+			}
+		} else if (!productCode.equals(other.productCode)) {
+			return false;
+		}
+		return true;
+	}
+
+	
 	
 	
 	
