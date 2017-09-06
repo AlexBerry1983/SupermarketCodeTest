@@ -128,5 +128,15 @@ public class SkuBeanTest {
 		
 		assertNotSame(bean1.hashCode(), bean2.hashCode());
 	}
+	
+	@Test
+	public void toStringTest() {
+		BigDecimal price = new BigDecimal(8.45);
+		SkuBean bean1 = new SkuBean();
+		bean1.setDescription("Steak");
+		bean1.setProductCode("Z123");
+		bean1.setPrice(price);
+		assertEquals("SkuBean productCode=Z123, description=Steak, price=8.45", bean1.toString());
+	}
 
 }

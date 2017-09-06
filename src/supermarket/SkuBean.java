@@ -83,6 +83,15 @@ public class SkuBean implements Serializable {
 		return result;
 	}
 
+	@Override
+	public String toString() {
+		return "SkuBean productCode=" + productCode + ", description=" + description + ", price=" + price.setScale(2, BigDecimal.ROUND_HALF_UP);
+	}
+
+	
+	
+	
+
 	
 	
 	
