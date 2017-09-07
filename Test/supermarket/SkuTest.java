@@ -3,6 +3,8 @@ package supermarket;
 import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
+import static org.hamcrest.CoreMatchers.*;
+import org.hamcrest.Matcher;
 
 import org.junit.Test;
 
@@ -142,8 +144,8 @@ public class SkuTest {
 	@Test
 	public void canCreateNewObject() {
 		Sku bean1 = new Sku();
-		assertEquals(Sku.class, bean1.createNewSkuObject("Z123	steak	8.69"));
+		assertThat(bean1.createNewSkuObject("Z123	steak	8.69"), instanceOf(Sku.class));
 	}
 
-
+	
 }
