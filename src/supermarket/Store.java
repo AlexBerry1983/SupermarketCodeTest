@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Store {
 	
-	private ArrayList<SkuBean>stock;
+	private ArrayList<Sku>stock;
 	
 	public Store() {
-		this.stock = new ArrayList<SkuBean>();
+		this.stock = new ArrayList<Sku>();
 	}
 
 	public int getStockCount() {

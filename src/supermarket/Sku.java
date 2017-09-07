@@ -3,13 +3,13 @@ package supermarket;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class SkuBean implements Serializable {
+public class Sku implements Serializable {
 	
 	private String productCode;
 	private String description;
 	private BigDecimal price;
 	
-	public SkuBean() {
+	public Sku() {
 		
 	}
 
@@ -45,10 +45,10 @@ public class SkuBean implements Serializable {
 		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof SkuBean)) {
+		if (!(obj instanceof Sku)) {
 			return false;
 		}
-		SkuBean other = (SkuBean) obj;
+		Sku other = (Sku) obj;
 		if (description == null) {
 			if (other.description != null) {
 				return false;
@@ -88,7 +88,15 @@ public class SkuBean implements Serializable {
 		return "SkuBean productCode=" + productCode + ", description=" + description + ", price=" + price.setScale(2, BigDecimal.ROUND_HALF_UP);
 	}
 
-	
+	public Sku createNewSkuObject(String stringToCheck) {
+		String[] details = stringToCheck.split("/t");
+		Sku newObject = new Sku();
+		newObject.setProductCode(details[0]);
+		newObject.setDescription(details[1]);
+		BigDecimal price = new BigDecimal(details[2]);
+		newObject.setPrice(price);
+		return newObject;
+	}
 	
 	
 
