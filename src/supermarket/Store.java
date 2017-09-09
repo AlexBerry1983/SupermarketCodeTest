@@ -14,6 +14,8 @@ public class Store {
 		return this.stock.size();
 	}
 
-	
+	public void addProductToStock(Sku product) {
+		this.stock.add(product);
+	}
 	
 }

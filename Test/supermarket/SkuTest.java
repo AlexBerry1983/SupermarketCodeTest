@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
 import static org.hamcrest.CoreMatchers.*;
-import org.hamcrest.Matcher;
 
 import org.junit.Test;
 
@@ -143,8 +142,26 @@ public class SkuTest {
 	
 	@Test
 	public void canCreateNewObject() {
-		Sku bean1 = new Sku();
-		assertThat(bean1.createNewSkuObject("Z123	steak	8.69"), instanceOf(Sku.class));
+		assertThat(Sku.createNewSkuObject("Z123	steak	8.69"), instanceOf(Sku.class));
+	}
+	
+	@Test
+	public void canGetProductCodeOfNewObject() {
+		Sku newObject = Sku.createNewSkuObject("Z123	steak	8.69");
+		assertEquals("Z123", newObject.getProductCode());
+	}
+	
+	@Test
+	public void canGetDescriptionOfNewObject() {
+		Sku newObject = Sku.createNewSkuObject("Z123	steak	8.69");
+		assertEquals("steak", newObject.getDescription());
+	}
+	
+	@Test
+	public void canGetPriceOfNewObject() {
+		Sku newObject = Sku.createNewSkuObject("Z123	steak	8.69");
+		BigDecimal cost = new BigDecimal(8.69);
+		assertEquals(cost.setScale(2, BigDecimal.ROUND_HALF_UP), newObject.getPrice());
 	}
 
 	
