@@ -18,5 +18,12 @@ public class StoreTest {
 		shop.addProductToStock(product);
 		assertEquals(1, shop.getStockCount());
 	}
+	
+	@Test
+	public void fillStockFromTsvfile() {
+		Store store = new Store();
+		store.parseTsv();
+		assertEquals(3, store.getStockCount());
+	}
 
 }

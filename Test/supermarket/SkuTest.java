@@ -112,7 +112,7 @@ public class SkuTest {
 	public void hashCodesEqual() {
 		Sku bean1 = new Sku();
 		Sku bean2 = new Sku();
-		
+	
 		bean1.setProductCode("Q123");
 		bean2.setProductCode("Q123");
 		
