@@ -2,6 +2,7 @@ package supermarket;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Scanner;
 
 public class Sku implements Serializable {
 	
@@ -89,11 +90,13 @@ public class Sku implements Serializable {
 	}
 	
 	public static Sku createNewSkuObject(String stringToCheck) {
-		String[] details = new String[3];
-		details = stringToCheck.split("\t");
-		String productCode = details[0];
-		String description = details[1];
-		BigDecimal price = new BigDecimal(details[2]);
+		Scanner scanner = new Scanner(stringToCheck);
+		scanner.useDelimiter("\t");
+		String productCode = scanner.next();
+		String description = scanner.next();
+		String priceStr = scanner.next();
+		BigDecimal price = new BigDecimal(priceStr);
+		scanner.close();
 		Sku newObject = new Sku();
 		newObject.setProductCode(productCode);
 		newObject.setDescription(description);

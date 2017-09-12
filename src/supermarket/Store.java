@@ -29,12 +29,8 @@ public class Store {
     			scanner.nextLine();
     		while(scanner.hasNext()) {
     			String productLine = scanner.nextLine();
-    			ArrayList<String> products = new ArrayList<String>();
-    			products.add(productLine);
-    			for (String product:products) {
-    				Sku productObj = Sku.createNewSkuObject(product);
-    				this.stock.add(productObj);
-    			}
+    			Sku productObj = Sku.createNewSkuObject(productLine);
+    			this.stock.add(productObj);
     		}
     		scanner.close();
 		} catch (FileNotFoundException e) {
